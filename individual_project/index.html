@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opiskelijaravintolat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Opiskelijaravintolat Suomessa</h1>
+            <nav>
+                <button id="loginBtn">Kirjaudu sisään</button>
+                <button id="registerBtn">Rekisteröidy</button>
+                <button id="profileBtn" class="hidden">Profiili</button>
+                <button id="logoutBtn" class="hidden">Kirjaudu ulos</button>
+            </nav>
+        </header>
+
+        <!-- Filters -->
+        <section class="filters">
+            <h2>Suodata ravintoloita</h2>
+            <div class="filter-group">
+                <select id="cityFilter">
+                    <option value="">Kaikki kaupungit</option>
+                </select>
+                <select id="providerFilter">
+                    <option value="">Kaikki palveluntarjoajat</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Hae ravintolaa nimellä...">
+            </div>
+        </section>
+
+        <!-- Map Placeholder -->
+        <section id="map">Kartta (Leaflet.js tai Google Maps - lisää vanilla JS:llä)</section>
+
+        <!-- Restaurant List -->
+        <section class="restaurant-list" id="restaurantList">
+            <!-- Ravintolat lisätään tänne JS:llä -->
+        </section>
+
+        <!-- Menu Display -->
+        <section class="menu-display" id="menuDisplay">
+            <button id="closeMenu">Sulje</button>
+            <h2 id="menuTitle"></h2>
+            <div id="menuContent"></div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile hidden" id="profileSection">
+            <h2>Omat tiedot</h2>
+            <img src="" alt="Profiilikuva" id="profilePic">
+            <input type="file" id="uploadPic" accept="image/*">
+            <input type="text" id="username" placeholder="Käyttäjätunnus">
+            <input type="email" id="email" placeholder="Sähköposti">
+            <select id="favoriteRestaurant">
+                <option value="">Valitse suosikkiravintola</option>
+            </select>
+            <button id="updateProfile">Päivitä tiedot</button>
+        </section>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Kirjaudu sisään</h2>
+            <input type="text" id="loginUser" placeholder="Käyttäjätunnus">
+            <input type="password" id="loginPass" placeholder="Salasana">
+            <button id="doLogin">Kirjaudu</button>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <h2>Rekisteröidy</h2>
+            <input type="text" id="regUser" placeholder="Käyttäjätunnus">
+            <input type="email" id="regEmail" placeholder="Sähköposti">
+            <input type="password" id="regPass" placeholder="Salasana">
+            <button id="doRegister">Rekisteröidy</button>
+        </div>
+    </div>
+
+    <!-- <script src="app.js"></script> --> <!-- JavaScript-tiedosto lisätään myöhemmin -->
+</body>
+</html>
